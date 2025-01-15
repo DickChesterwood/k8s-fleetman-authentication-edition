@@ -1,7 +1,5 @@
-# k8s Fleetman
+# k8s Fleetman - Authentication Edition
 
-**Rebuilt in 2023 to support native ARM64 containers**
+A slightly expanded version of Fleetman (with a basic Admin feature) to demonstrate federated authentication.
 
-A new version of "Fleetman", my thrilling example microservice architecture.
-
-Full course available at https://www.udemy.com/user/richard-chesterwood/
+This is a work in progress, I hope to release extensions to the Kubernetes and Istio courses in early 2025.
