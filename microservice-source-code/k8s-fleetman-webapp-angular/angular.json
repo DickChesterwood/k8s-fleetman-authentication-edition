@@ -56,18 +56,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "k8s-fleetman-webapp-angular:build"
+            "buildTarget": "k8s-fleetman-webapp-angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "k8s-fleetman-webapp-angular:build:production"
+              "buildTarget": "k8s-fleetman-webapp-angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "k8s-fleetman-webapp-angular:build"
+            "buildTarget": "k8s-fleetman-webapp-angular:build"
           }
         },
         "test": {
@@ -144,5 +144,8 @@
     "@schematics/angular:directive": {
       "prefix": "app"
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

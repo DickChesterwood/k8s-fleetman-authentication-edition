@@ -9,29 +9,22 @@ import { VehicleService } from './vehicle.service';
 import { HttpClientModule }    from '@angular/common/http';
 import { MapComponent } from './map/map.component';
 
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { LeafletModule } from '@bluehalo/ngx-leaflet';
 
 import { HeaderComponent } from './header/header.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
-import { DOCUMENT } from '@angular/platform-browser';
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    VehiclesComponent,
-    MapComponent,
-    HeaderComponent
-  ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    LeafletModule.forRoot(),
-    NgbModule.forRoot()
+    LeafletModule,
+    NgbModule,
+    HeaderComponent
   ],
   providers: [VehicleService],
-  bootstrap: [AppComponent]
+  // not sure if this needs to move? bootstrap: [AppComponent]
 })
 export class AppModule {
 }

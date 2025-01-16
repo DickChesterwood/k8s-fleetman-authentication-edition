@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { LeafletModule } from '@bluehalo/ngx-leaflet';
 import { icon, latLng, Layer, Marker, marker, tileLayer, Map, point, polyline } from 'leaflet';
 
 import { VehicleService } from '../vehicle.service';
