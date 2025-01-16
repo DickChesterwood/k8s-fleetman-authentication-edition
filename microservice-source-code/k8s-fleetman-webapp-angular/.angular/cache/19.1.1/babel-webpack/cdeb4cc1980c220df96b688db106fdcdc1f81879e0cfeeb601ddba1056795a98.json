@@ -1,1 +1,0 @@
-{"ast":null,"code":"export class Vehicle {\n  constructor(name, lat, lng, dateAndTime, speed) {\n    this.name = name;\n    this.lat = lat;\n    this.lng = lng;\n    this.dateAndTime = dateAndTime;\n    this.speed = speed;\n  }\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
