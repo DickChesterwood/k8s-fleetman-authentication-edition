@@ -8,7 +8,8 @@ import { Vehicle } from '../vehicle';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.css']
+  styleUrls: ['./map.component.css'],
+  imports: [LeafletModule]
 })
 export class MapComponent implements OnInit {
 
