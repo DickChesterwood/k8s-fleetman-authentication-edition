@@ -34,7 +34,7 @@ public class VehicleController
 	 */
 	public String apiTestUrl()
 	{
-		return "<p>Fleetman API Gateway at 2023 Edition" + new Date() + "</p>";
+		return "<p>Fleetman API Gateway at AUTHENTICATION EDITION " + new Date() + "</p>";
 	}
 	
 	@GetMapping("/history/{vehicleName}")
@@ -59,6 +59,7 @@ public class VehicleController
     public Collection<VehiclePosition> getAllVehiclePositions()
     {
     	Collection<VehiclePosition> results = externalService.getAllPositions();
+    	System.out.println("OUCH! Got some results, " + results.size());
     	return results;
     }
 }

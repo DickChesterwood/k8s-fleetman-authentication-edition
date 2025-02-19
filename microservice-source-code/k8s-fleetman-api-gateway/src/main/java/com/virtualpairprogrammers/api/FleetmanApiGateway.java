@@ -8,6 +8,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableFeignClients
 public class FleetmanApiGateway {
 	public static void main(String[] args) {
+		System.out.println("AUTHENTICATION EDITION");
 		SpringApplication.run(FleetmanApiGateway.class, args);		
 	}	
 }

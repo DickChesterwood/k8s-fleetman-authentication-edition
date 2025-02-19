@@ -55,7 +55,7 @@ spec:
     spec:
       containers:
       - name: position-tracker
-        image: richardchesterwood/k8s-fleetman-position-tracker:release3
+        image: richardchesterwood/k8s-fleetman-position-tracker:release2
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: production-microservice
@@ -76,7 +76,8 @@ spec:
     spec:
       containers:
       - name: api-gateway
-        image: richardchesterwood/k8s-fleetman-api-gateway:release2
+        image: k8s-fleetman-api-gateway-19:1
+        imagePullPolicy: Never
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: production-microservice
