@@ -99,7 +99,7 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: k8s-fleetman-webapp-19:latest
+        image: k8s-fleetman-webapp-19:1
         imagePullPolicy: Never
         env:
         - name: SPRING_PROFILES_ACTIVE

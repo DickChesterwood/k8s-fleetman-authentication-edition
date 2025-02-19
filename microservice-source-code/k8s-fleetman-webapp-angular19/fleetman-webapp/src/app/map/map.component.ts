@@ -18,6 +18,7 @@ export class MapComponent implements OnInit {
   markers: Marker[] = [];
   map: Map;
   centerVehicle: string;
+  selectedVehicleHistory;
 
   options = {
     layers: [
@@ -71,5 +72,12 @@ export class MapComponent implements OnInit {
        				   	       "animate": true
        				  });
      });
+
+     this.vehicleService.centerVehicleHistory.subscribe(newHistory => {
+       if (this.selectedVehicleHistory != null) this.selectedVehicleHistory.remove(this.map);
+       if (newHistory ==null) return;
+       this.selectedVehicleHistory = polyline(newHistory, {weight:10, opacity:0.5, color:'red'});
+       this.selectedVehicleHistory.addTo(this.map);
+     });     
    }
 }

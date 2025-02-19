@@ -13,6 +13,7 @@ export class VehicleService  {
 
   subscription: BehaviorSubject<Vehicle>;
   centerVehicle: BehaviorSubject<Vehicle>;
+  centerVehicleHistory: BehaviorSubject<any>;
   timedUpdate: Subscription;
   source = interval(1000);
 
@@ -22,12 +23,13 @@ export class VehicleService  {
     // for use with template ( | async )
     this.subscription = new BehaviorSubject(null);
     this.centerVehicle = new BehaviorSubject(null);
+    this.centerVehicleHistory = new BehaviorSubject(null);
     this.timedUpdate = this.source.subscribe(val =>   this.http.get("http://" + window.location.hostname + ":" + window.location.port + "/api/vehicles/")
              .subscribe( data => this.updateAllPositions(data)));
   }
 
-  updateAllPositions(data: any) {
-    data.forEach( (body: any) => {
+  updateAllPositions(data) {
+    data.forEach( (body) => {
           console.log(body);
           let newVehicle = new Vehicle(body.name,
                                  Number(body.lat),
@@ -40,5 +42,16 @@ export class VehicleService  {
 
   updateCenterVehicle(centerVehicle: Vehicle) {
     this.centerVehicle.next(centerVehicle);
+
+    if (centerVehicle == null)
+    {
+      this.centerVehicleHistory.next(null);
+    }
+    else
+    {
+      // call API gateway, get the history for this vehicle.
+      this.http.get("http://" + window.location.hostname + ":" + window.location.port + "/api/history/" + centerVehicle.name)
+             .subscribe( data => this.centerVehicleHistory.next(data));
+    }
   }
 }
