@@ -47,8 +47,8 @@ export class MapComponent implements OnInit {
                                    icon: icon( {
                                                  iconSize: [ 25, 41 ],
                                                  iconAnchor: [ 11, 41 ],
-                                                 iconUrl: 'assets/marker-icon.png',
-                                                 shadowUrl: 'assets/marker-shadow.png'
+                                                 iconUrl: 'marker-icon.png',
+                                                 shadowUrl: 'marker-shadow.png'
                                                }),
                                    title: vehicle.name
                                  }).bindTooltip(vehicle.name, {permanent:true,  offset: point({x: 0, y: 0})});
