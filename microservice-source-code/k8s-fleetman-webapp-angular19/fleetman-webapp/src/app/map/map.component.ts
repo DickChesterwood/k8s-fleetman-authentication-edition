@@ -58,6 +58,9 @@ export class MapComponent implements OnInit {
        {
         this.markers[foundIndex].setLatLng(latLng(vehicle.lat, vehicle.lng));
        }
+       if (this.centerVehicle == vehicle.name) {
+         this.selectedVehicleHistory.addLatLng(latLng(vehicle.lat, vehicle.lng));
+       }
      });
 
      this.vehicleService.centerVehicle.subscribe(vehicle => {
